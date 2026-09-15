@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verify a Degree — VERITAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="seal" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#12202B"/><path d="M13 20.5l4.5 4.5 9.5-9.5" stroke="#B8862F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      VERITAS
+    </a>
+    <nav class="nav-links">
+      <a href="verify.html" class="active">Verify a degree</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="4.5"/></svg>
+      </button>
+      <a href="auth.html" class="btn btn-primary btn-sm">Sign in</a>
+      <button class="icon-btn nav-toggle" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer">
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="brand">VERITAS</span>
+      <button class="close-drawer" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav>
+      <a href="verify.html">Verify a degree</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="auth.html">Sign in</a>
+    </nav>
+  </div>
+</div>
+
+<main class="section" style="padding-top:52px">
+  <div class="wrap">
+    <div class="section-head">
+      <h1 style="font-family:var(--font-serif);font-size:clamp(28px,4vw,40px)">Verify a degree</h1>
+      <p>Search the centralized registry directly, or scan a certificate's printed QR code. No account required for a basic check.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="tabs">
+          <button class="tab-btn active" data-verify-tab="search">Search registry</button>
+          <button class="tab-btn" data-verify-tab="scan">Scan QR code</button>
+        </div>
+
+        <div class="tab-panel active" data-verify-panel="search">
+          <form id="searchForm">
+            <div class="field">
+              <label for="certSearchInput">Certificate ID</label>
+              <input type="text" id="certSearchInput" placeholder="e.g. VRT-2021-NITD-88213" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Check authenticity</button>
+          </form>
+          <p class="muted" style="margin-top:18px;margin-bottom:8px">Try an example:</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button type="button" class="btn btn-outline btn-sm" data-example-id="VRT-2021-NITD-88213">Verified sample</button>
+            <button type="button" class="btn btn-outline btn-sm" data-example-id="VRT-2023-NITD-90112">Pending sample</button>
+            <button type="button" class="btn btn-outline btn-sm" data-example-id="VRT-2017-KLSI-77300">Flagged sample</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-verify-panel="scan">
+          <div class="scan-box" id="scanBox">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V5a1 1 0 0 1 1-1h2M20 7V5a1 1 0 0 0-1-1h-2M4 17v2a1 1 0 0 0 1 1h2M20 17v2a1 1 0 0 1-1 1h-2M7 12h10"/></svg>
+            <span style="font-size:13px">Camera preview appears here</span>
+          </div>
+          <button type="button" class="btn btn-primary btn-block" id="scanToggleBtn" style="margin-top:18px">Start camera scan</button>
+          <p class="muted" style="margin-top:14px;font-size:12.5px">Requires camera permission and an internet connection to load the scanner library. If it's unavailable, use Search registry instead.</p>
+        </div>
+      </div>
+
+      <div>
+        <div id="resultEmpty" class="card" style="text-align:center;color:var(--slate-soft)">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin:0 auto 14px"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+          <p style="margin:0">Results will appear here once you search or scan a certificate.</p>
+        </div>
+        <div id="resultPanel" class="result-panel hidden"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 VERITAS. Demo registry data only — not a real accreditation service.</span>
+      <a href="index.html">Back to home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/verify.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

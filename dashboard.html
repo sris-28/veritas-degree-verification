@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — VERITAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="app-sidebar">
+    <a href="index.html" class="brand">
+      <svg class="seal" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#1B2E3C"/><circle cx="20" cy="20" r="19" stroke="#B8862F" stroke-width="1"/><path d="M13 20.5l4.5 4.5 9.5-9.5" stroke="#B8862F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      VERITAS
+    </a>
+    <nav class="side-nav">
+      <a href="#overview" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>Overview</a>
+      <a href="#submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>Submit a degree</a>
+      <a href="#verifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>My verifications</a>
+      <a href="verify.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/></svg>Verify a degree</a>
+      <a href="institutions.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Institutions</a>
+      <a href="#profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.5-6.5 7-6.5s7 2.5 7 6.5"/></svg>Settings</a>
+    </nav>
+    <div class="side-foot">
+      <div class="avatar" data-user-initials>?</div>
+      <div class="who"><b data-user-name>Guest</b><span data-user-email></span></div>
+      <button data-logout aria-label="Log out" title="Log out">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <section id="overview">
+      <div class="app-topbar">
+        <div>
+          <h1>Welcome back, <span data-user-name>there</span></h1>
+          <div class="sub">Here's where your verification stands right now.</div>
+        </div>
+        <a href="#submit" class="btn btn-primary">Submit a new degree</a>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-box"><b data-stat-total>0</b><span>Degrees submitted</span></div>
+        <div class="stat-box"><b data-stat-verified>0</b><span>Verified</span></div>
+        <div class="stat-box"><b data-stat-flagged>0</b><span>Needs attention</span></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2>Verification progress</h2>
+          <p class="muted">What's done, and what's still needed.</p>
+          <div class="progress-wrap">
+            <svg class="progress-ring" viewBox="0 0 84 84"><circle class="bg" cx="42" cy="42" r="34"/><circle class="fg" cx="42" cy="42" r="34"/></svg>
+            <div>
+              <div class="progress-pct" data-progress-pct>0%</div>
+              <div class="muted" style="margin:0">complete</div>
+            </div>
+          </div>
+          <div class="stepper" id="onboardingStepper"></div>
+        </div>
+
+        <div class="card">
+          <h2>Recent activity</h2>
+          <p class="muted">A running log of what's happened on your account.</p>
+          <div class="activity-list" id="activityFeed"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="submit" style="margin-top:40px">
+      <div class="app-topbar"><h1 style="font-size:22px">Submit a degree for verification</h1></div>
+      <div class="card" style="max-width:640px">
+        <h2>Degree details</h2>
+        <p class="muted">Enter the details exactly as printed on your certificate — we'll cross-check them against the centralized registry.</p>
+        <form id="degreeForm">
+          <div class="field">
+            <label for="certificateId">Certificate ID</label>
+            <input type="text" id="certificateId" name="certificateId" placeholder="e.g. VRT-2021-NITD-88213" required />
+            <div class="hint">Try <code>VRT-2021-NITD-88213</code> (verified) or <code>VRT-2017-KLSI-77300</code> (flagged) to see both outcomes.</div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="institutionCode">Institution</label>
+              <select id="institutionCode" name="institutionCode" data-institution-select required>
+                <option value="" disabled selected>Select institution</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="year">Year awarded</label>
+              <input type="number" id="year" name="year" min="1950" max="2026" placeholder="2021" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="degreeName">Degree name</label>
+            <input type="text" id="degreeName" name="degreeName" placeholder="e.g. Bachelor of Technology, Computer Science" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit for verification</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="verifications" style="margin-top:40px">
+      <div class="app-topbar"><h1 style="font-size:22px">My verifications</h1></div>
+      <div class="card">
+        <div class="activity-list" id="verificationsList"></div>
+      </div>
+    </section>
+
+    <section id="profile" style="margin-top:40px">
+      <div class="app-topbar"><h1 style="font-size:22px">Profile settings</h1></div>
+      <div class="card" style="max-width:640px">
+        <h2>Your details</h2>
+        <p class="muted">Kept private — only shared with a verifier when you generate a certificate QR code.</p>
+        <form id="profileForm">
+          <div class="field-row">
+            <div class="field"><label for="pfName">Full name</label><input type="text" id="pfName" name="name" required /></div>
+            <div class="field"><label for="pfEmail">Email</label><input type="email" id="pfEmail" name="email" required /></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="pfPhone">Phone</label><input type="tel" id="pfPhone" name="phone" /></div>
+            <div class="field"><label for="pfDob">Date of birth</label><input type="date" id="pfDob" name="dob" /></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="pfNationality">Nationality</label><input type="text" id="pfNationality" name="nationality" placeholder="e.g. Indian" /></div>
+            <div class="field"><label for="pfAddress">City / Address</label><input type="text" id="pfAddress" name="address" placeholder="e.g. New Delhi, India" /></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save profile</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

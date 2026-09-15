@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VERITAS — Academic Degree Verification, Made Trustworthy</title>
+<meta name="description" content="VERITAS cross-checks academic degrees against a centralized institutional registry, scans QR-coded certificates, and verifies data integrity to stop fake-degree fraud." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%2211%22 fill=%22%2312202B%22/><path d=%22M8 12.5l2.5 2.5 5.5-5.5%22 stroke=%22%23B8862F%22 stroke-width=%222%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <svg class="seal" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#12202B"/><circle cx="20" cy="20" r="19" stroke="#B8862F" stroke-width="1"/><path d="M13 20.5l4.5 4.5 9.5-9.5" stroke="#B8862F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      VERITAS
+    </a>
+    <nav class="nav-links">
+      <a href="verify.html">Verify a degree</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/><circle cx="12" cy="12" r="4.5"/></svg>
+      </button>
+      <a href="auth.html" class="btn btn-outline btn-sm">Sign in</a>
+      <a href="auth.html" class="btn btn-primary btn-sm">Get started</a>
+      <button class="icon-btn nav-toggle" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer">
+  <div class="panel">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="brand">VERITAS</span>
+      <button class="close-drawer" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <nav>
+      <a href="verify.html">Verify a degree</a>
+      <a href="institutions.html">Institutions</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="auth.html">Sign in</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="hero-eyebrow"><span class="dot"></span>Registry-verified since 2019</div>
+        <h1>Prove a degree is real before you trust it.</h1>
+        <p class="lede">VERITAS cross-checks certificates against a centralized institutional registry, scans QR-coded degrees in seconds, and flags anything whose integrity fingerprint doesn't match — so fake degrees stop working.</p>
+        <div class="hero-ctas">
+          <a href="verify.html" class="btn btn-primary">Verify a degree now</a>
+          <a href="auth.html" class="btn btn-outline">Create your profile</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b data-count-to="482000" data-suffix="+">0</b><span>Registry records</span></div>
+          <div class="stat"><b data-count-to="1140">0</b><span>Partner institutions</span></div>
+          <div class="stat"><b data-count-to="99" data-suffix="%">0</b><span>Match accuracy</span></div>
+        </div>
+      </div>
+
+      <div class="cert-stage">
+        <div class="cert-float f1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+          Registry match
+        </div>
+        <div class="cert-card">
+          <div class="cert-top">
+            <div>
+              <div class="cert-title">Certificate of Degree</div>
+              <div class="mono">VRT-2021-NITD-88213</div>
+            </div>
+          </div>
+          <div class="cert-name">Ananya Sharma</div>
+          <div class="cert-degree">Bachelor of Technology, Computer Science<br>National Institute of Technology, Delhi · 2021</div>
+          <div class="cert-bottom">
+            <svg class="cert-qr" viewBox="0 0 64 64"><rect width="64" height="64" fill="#EDE8DA"/><g fill="#12202B"><rect x="4" y="4" width="16" height="16"/><rect x="44" y="4" width="16" height="16"/><rect x="4" y="44" width="16" height="16"/><rect x="8" y="8" width="8" height="8" fill="#EDE8DA"/><rect x="48" y="8" width="8" height="8" fill="#EDE8DA"/><rect x="8" y="48" width="8" height="8" fill="#EDE8DA"/><rect x="24" y="4" width="4" height="4"/><rect x="32" y="4" width="4" height="8"/><rect x="24" y="24" width="12" height="12"/><rect x="44" y="28" width="4" height="4"/><rect x="52" y="24" width="8" height="4"/><rect x="24" y="44" width="4" height="4"/><rect x="32" y="52" width="8" height="4"/><rect x="44" y="44" width="4" height="12"/><rect x="52" y="52" width="8" height="8"/></g></svg>
+            <span class="badge badge-verified"><span class="badge-dot"></span>Verified</span>
+          </div>
+          <svg class="cert-seal" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#B8862F" stroke-width="3"/><circle cx="50" cy="50" r="38" fill="none" stroke="#B8862F" stroke-width="1"/><path d="M34 51l11 11 21-21" stroke="#B8862F" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="cert-float f2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          Hash matched
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="wrap">
+      <span>National Institute of Technology, Delhi</span>
+      <span>Auberon University, London</span>
+      <span>Pacific Institute of Technology</span>
+      <span>Norvenna University</span>
+      <span>St. Meridian College</span>
+    </div>
+  </div>
+
+  <section class="section" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Five steps from certificate to confirmed.</h2>
+        <p>Every submission moves through the same auditable pipeline, whether it's a graduate building a profile or an employer checking a candidate.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">01</span><h3>Create a profile</h3><p>Graduates register their identity once; employers can skip straight to verifying.</p></div>
+        <div class="step"><span class="num">02</span><h3>Submit or scan</h3><p>Enter a certificate ID, upload the document, or scan its printed QR code.</p></div>
+        <div class="step"><span class="num">03</span><h3>Registry cross-check</h3><p>We match the record against the institution's entry in the centralized registry.</p></div>
+        <div class="step"><span class="num">04</span><h3>Integrity check</h3><p>A SHA-256 fingerprint confirms nothing on the certificate was altered.</p></div>
+        <div class="step"><span class="num">05</span><h3>Verdict issued</h3><p>A verified badge, pending notice, or fraud flag is returned — instantly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built to catch what a phone call can't.</h2>
+        <p>Manual verification is slow and easy to fake. VERITAS makes forgery detection systematic.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature f-lg dark">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Centralized registry cross-checks</h3>
+          <p>Every accredited institution's degree records live in one auditable registry, so a certificate is checked against the source — not a scanned PDF anyone could edit.</p>
+        </div>
+        <div class="feature f-sm">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><path d="M15 15h2v2h-2zM19 15h1M15 19h1M19 19h1"/></svg></div>
+          <h3>QR-code scanning</h3>
+          <p>Point a camera at any VERITAS-issued certificate for an instant, no-login authenticity check.</p>
+        </div>
+        <div class="feature f-half">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4Z"/></svg></div>
+          <h3>Tamper-evident hashing</h3>
+          <p>A cryptographic fingerprint is generated for every record. Change one character and the fingerprint breaks.</p>
+        </div>
+        <div class="feature f-half">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a1 1 0 0 1 1-1h9l5 5v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M13 4v5h5"/></svg></div>
+          <h3>Personal status dashboard</h3>
+          <p>Applicants see exactly what's submitted, what's pending, and what's left to do — no guessing games.</p>
+        </div>
+        <div class="feature f-half">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.3 0-2.5-.27-3.6-.77L3 21l1.83-5.4A8.46 8.46 0 0 1 3.5 11.5 8.5 8.5 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5Z"/></svg></div>
+          <h3>VERITAS Assist</h3>
+          <p>A built-in guide answers "what's left to do" and "why was this flagged" in plain language, any time.</p>
+        </div>
+        <div class="feature f-half">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Institution directory</h3>
+          <p>Browse every accredited partner institution and see how long they've been part of the registry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to check a degree?</h2>
+          <p>No account needed to run a basic search — sign up to track submissions and generate shareable QR credentials.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="verify.html" class="btn btn-verified">Verify a degree</a>
+          <a href="auth.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">Create account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:10px">
+          <svg class="seal" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#12202B"/><path d="M13 20.5l4.5 4.5 9.5-9.5" stroke="#B8862F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          VERITAS
+        </a>
+        <p style="max-width:34ch;font-size:13.5px">A centralized platform for verifying academic degrees, protecting institutions, employers and graduates from credential fraud.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="verify.html">Verify a degree</a>
+        <a href="institutions.html">Institutions</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="auth.html">Sign in</a>
+        <a href="auth.html">Create account</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#" data-open-chat>Ask VERITAS Assist</a>
+        <a href="mailto:support@veritas-verify.example">support@veritas-verify.example</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 VERITAS. Demo registry data only — not a real accreditation service.</span>
+      <span>Built for integrity in higher education.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+  document.querySelectorAll("[data-open-chat]").forEach(a=> a.addEventListener("click", (e)=>{ e.preventDefault(); document.querySelector(".chat-launch")?.click(); }));
+</script>
+</body>
+</html>
