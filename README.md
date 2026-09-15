@@ -6,18 +6,6 @@ QR codes, generating tamper-evident integrity hashes, and giving applicants a
 clear personal status dashboard — with a built-in help chatbot throughout.
 
 ## Run it
-
-No build step, no backend, no dependencies to install.
-
-1. Unzip this folder.
-2. Open it in VS Code (or any editor) and start **Live Server** on `index.html`
-   — or just double-click `index.html` to open it in a browser.
-3. That's it. All "server" data is a seeded mock registry (`js/data.js`) and
-   everything else is stored locally in your browser (`localStorage`), so it
-   works fully offline except for two optional CDN libraries (Google Fonts,
-   and the QR camera scanner on the Verify page — both degrade gracefully
-   without internet).
-
 ## Pages
 
 - `index.html` — landing page: what VERITAS does, how it works, features.
